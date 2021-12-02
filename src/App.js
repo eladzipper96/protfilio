@@ -22,6 +22,7 @@ function App() {
   const windowwidth = window.screen.width
 
   const activeRefs = (str) => {
+    
     if(str==='home') mainRef.current?.scrollIntoView({ behavior: "smooth" })
     if(str==='about') moreaboutmeRef.current?.scrollIntoView({ behavior: "smooth" }) 
     if(str==='skills') skillsRef.current?.scrollIntoView({ behavior: "smooth" })
