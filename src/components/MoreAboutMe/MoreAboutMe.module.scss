@@ -1,0 +1,72 @@
+.container {
+    padding-top: 15rem;
+    padding-left: 7.5rem;
+    font-family: 'Raleway', sans-serif;
+    background-color: white;
+
+    & h2 {
+        font-size: 6.5rem;
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+
+    & img {
+        margin-top: 3rem;
+        align-self: center;
+        width: 450px;
+    }
+
+    & p {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+        line-height: 3rem;
+        color: rgb(65, 64, 64);
+
+        & b {
+            font-size: 1.7rem;
+            color: black;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 834px) {
+
+    .container {
+        padding-left: 4.5rem;
+    }
+
+    .main {  
+        p {
+            width: 90%;
+            text-align: justify;
+        }
+        img {
+            width: 90%;
+            align-self: unset;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        padding-left:unset;
+        & h2 {
+            margin-left: 3rem;
+        }
+        
+    }
+
+    .main {
+        align-items: center;
+
+        p {
+            width: 80%;
+        }
+    }
+}

@@ -1,0 +1,129 @@
+.container {
+    padding-left: 7.5rem;
+    padding-top: 15rem;
+    font-family: 'Raleway', sans-serif;
+    background-color: white;
+
+    & h2 {
+        font-size: 6.5rem;
+    }
+}
+
+.itemcontainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    margin-top: 3rem;
+    overflow: hidden;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-style: solid;
+    border-width: 1px;
+    
+    &:nth-child(1) {
+      border-color: rgb(119, 192, 237);
+      color: rgb(119, 192, 237);
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
+
+    &:nth-child(2) {
+        border-color: rgb(124,93,250);
+        color: rgb(124,93,250)
+    }
+
+}
+
+.itemtop {
+    align-self: center;
+    display: flex;
+
+    & img {
+        background-color: white;
+        width: 60px;
+        height: 60px;
+        margin-top: 2.5rem;
+    }
+
+    & h3 {
+
+        margin-left: 1rem;
+        margin-top: 3rem;
+        font-size: 3.25rem;
+    }
+}
+
+.item_main {
+    align-self: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+
+}
+
+.rollercoaster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainimage {
+    height: 300px;
+}
+
+.bullets {
+    z-index: 100;
+    transform: translateY(-2rem);
+}
+
+.bullet {
+    border-radius: 50%;
+    width: 15px;
+    margin-left: 0.25rem;
+}
+
+@media screen and (max-width: 1520px) {
+    .itemtop {
+        & img {
+            width: 50px;
+            height: 50px;
+        }
+        & h3 {    
+            font-size: 2.5rem;
+        }
+    }
+
+    .mainimage {
+        height: 250px;
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 834px) {
+
+    .container{
+        padding-left: 4.5rem;
+    }
+    
+    .item {
+        border-width: 2px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container{
+        padding-left: 3rem;
+    }
+
+    .mainimage {
+        height: 350px;
+        width: 250px;
+    }
+}

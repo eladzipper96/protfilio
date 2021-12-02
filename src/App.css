@@ -1,38 +1,120 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 47.5% 1fr
+}
+
+.image_container {
+  grid-column: 1/2;
+  height: 120%;
+  width: 900px;
+  transform: translateY(-10%);
+  z-index: 1;
+  position: fixed;
+  overflow-y: hidden
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  
+}
+
+.bookmark {
+  grid-column: 1/2;
+  position: fixed;
+  display: flex;
+  margin-top: 5rem;
+  z-index: 2;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  height: 80px;
+  width: 40%;
+  transform: translateX(19%);
+  border-radius: 50px 0 0 50px;
+
+}
+
+
+
+.name {
+  font-family: 'Smooch', cursive;
+  font-weight: 500;
+  font-size: 3rem;
+  letter-spacing: 1.5px;
+  margin-left: 7.5rem;
   text-align: center;
+  align-self: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.right {
+  grid-column: 2/3;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  z-index: 10000;
 }
 
-.App-link {
-  color: #61dafb;
+@media screen and (max-width: 1500px){
+
+.nav {
+  grid-template-columns: 47% 53%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.image_container {
+  width: 850px;
 }
+
+}
+
+@media screen and (max-width: 1390px){
+
+    .image_container {
+      width: 725px;
+    }
+
+    h2 {
+      font-size: 5.5rem !important;
+    }
+  
+  }
+
+
+  @media screen and (max-width: 834px) {
+    .image_container {
+      width: unset;
+    }
+  }
+
+  
+  @media screen and (max-width: 500px) { 
+    
+    .app {
+      display: grid;
+      grid-template-columns: 1fr
+    }
+
+    .image_container {
+      display: none;
+    }
+
+  }
