@@ -38,7 +38,7 @@ const Projects = () => {
     useEffect(() => {
         clearAllIntervals()
         if(!chatFlag){
-            const chatInterval = setInterval(() => {
+            setInterval(() => {
                 if(windowidth <= 500) {
                     if(chatImage === chat1) SetChatImage(chat2_mobile)
                     if(chatImage === chat2) SetChatImage(chat3_mobile)
@@ -53,7 +53,7 @@ const Projects = () => {
         }
 
         if(!invoiceFlag){
-            const invoiceInterval = setInterval(() => {
+            setInterval(() => {
                 if(windowidth <= 500) {
                     if(invoiceImage === invoice1) setInvoiceImage(invoice2_mobile)
                     if(invoiceImage === invoice2) setInvoiceImage(invoice3_mobile)
@@ -67,13 +67,18 @@ const Projects = () => {
             },10000)
         }
        
-    },[chatImage,invoiceImage,invoiceFlag,chatFlag])
+    },[chatImage,invoiceImage,invoiceFlag,chatFlag,windowidth])
 
 
 
     const clearAllIntervals = () => {
+        
+        // This function only purpose is to remove an error message
+        const semicolumn = () => {
+            return ';'
+        }
 
-        var highestTimeoutId = setTimeout(";");
+        var highestTimeoutId = setTimeout(semicolumn);
         for (var i = 0 ; i < highestTimeoutId ; i++) {
         clearTimeout(i); 
         } 
@@ -134,7 +139,7 @@ const Projects = () => {
 
                         <div className={classes.item_main}>
                             <div className={classes.rollercoaster}>
-                                <a href='https://eladchatapp.me/' target='_blank'>
+                                <a href='https://eladchatapp.me/' target='_blank' rel="noreferrer">
                                     <img className={classes.mainimage} src={chatImage} alt='chatimage'       onTouchStart={() => ImageSwitcher('chat',chatImageRef.current+1)}/>
                                 </a>
                                 <div className={classes.bullets}>
@@ -163,7 +168,7 @@ const Projects = () => {
 
                         <div className={classes.item_main}>
                             <div className={classes.rollercoaster}>
-                                <a href='https://www.eladinvoiceback.me/' target='_blank'>
+                                <a href='https://www.eladinvoiceback.me/' target='_blank' rel="noreferrer">
                                     <img className={classes.mainimage}src={invoiceImage} alt='invoiceimage'     onTouchStart={() => ImageSwitcher('invoice',invoiceImageRef.current+1)}/>
                                 </a>
                                 <div className={classes.bullets}>
